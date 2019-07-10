@@ -59,6 +59,8 @@ IRIG 106 is developed and maintained by the Telemetry Group of the Range Command
 
 7. Import dashboard in ./kibana/export.ndjson via Kibana's Management->Saved Objects->Import.
 
-Screenshot:
+Note: There are no year/month/day in Chapter 10 data, so set your time filter in Kibana to start at Jan 1 of this year.
 
-![image](https://raw.github.com/elastickent/mil-std-1553-es/blob/master/screenshot.jpg)
+###  Dashboard:
+
+![image](screenshot.jpg)
