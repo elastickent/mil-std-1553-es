@@ -1,0 +1,19 @@
+filebeat.inputs:
+- type: stdin
+# - type: log
+#   paths:
+#    - '/Volumes/ext_ssd/downloads/1553/logs/*'
+
+# output.console:
+#   pretty: true
+setup.template.name: "1553"
+setup.template.pattern: "1553*"
+setup.template.overwrite: false
+setup.ilm.enabled: false
+output.elasticsearch:
+  pipeline: "1553"
+  index: "1553-%{+yyyy.MM.dd}"
+  ssl.verification_mode: "none"
+  username: "elastic"
+  password: "elastic"
+  hosts: ["https://es.example.com:9200"]
