@@ -16,7 +16,7 @@ IRIG 106 is developed and maintained by the Telemetry Group of the Range Command
 
 1. Clone this repo.
 2. Edit es_curl_setup.sh, docker_build_run.sh and filebeat.yml files with your Elasticsearch server details.
-3. in your newly cloned ./mil-std-1553-es, clone  https://github.com/bbaggerman/irig106utils and https://github.com/bbaggerman/irig106utils.
+3. In your newly cloned ./mil-std-1553-es, clone  https://github.com/bbaggerman/irig106lib and https://github.com/bbaggerman/irig106utils.
 4. Create a data_sets directory. Your directory structure should now look like:
 ```
 ./mil-std-1553-es
