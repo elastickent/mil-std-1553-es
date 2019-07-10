@@ -16,8 +16,8 @@ IRIG 106 is developed and maintained by the Telemetry Group of the Range Command
 
 1. Clone this repo.
 2. Edit es_curl_setup.sh, docker_build_run.sh and filebeat.yml files with your Elasticsearch server details.
-3. In your newly cloned ./mil-std-1553-es, clone  https://github.com/bbaggerman/irig106lib and https://github.com/bbaggerman/irig106utils. Thank you bbaggerman!
-4. Create a data_sets directory. Your directory structure should now look like the following:
+3. In your newly cloned ./mil-std-1553-es, clone  https://github.com/bbaggerman/irig106lib and https://github.com/bbaggerman/irig106utils. -Thank you bbaggerman!
+4. Create a data_sets directory. Your directory structure should now look like the following.
 ```
 ./mil-std-1553-es
 ├── Dockerfile
@@ -49,17 +49,17 @@ IRIG 106 is developed and maintained by the Telemetry Group of the Range Command
     ├── vs2012
     └── vs2017
 ```
-5. Add your ch10 file to your ./data_sets directory. Samples can be downloaded from [here](http://www.irig106.org/wiki/sample_data_files)
+5. Add your ch10 file to your ./data_sets directory. Samples can be downloaded from [here](http://www.irig106.org/wiki/sample_data_files).
 
    ```cp ~/TC-1553_107_132248.ch10 ./data_sets/```
 
-6. Load the data into Elasticsearch:
+6. Load the data into Elasticsearch.
 
    ```./docker_build_run.sh /data_sets/TTC-1553_107_132248.ch10```
 
 7. Import dashboard in ./kibana/export.ndjson via Kibana's Management->Saved Objects->Import.
 
-Note: There are no year/month/day in Chapter 10 data, so set your time filter in Kibana to start at Jan 1 of this year.
+Note: idmp1553 ouput does not contain Year/Month/Day. The Elasticsearch ingest pipeline sets it to Jan 1st, so set your time filter in Kibana to start at Jan 1 of this year. Hour/Day/Seconds.milliseconds are preserved.
 
 ###  Dashboard:
 
