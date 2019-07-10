@@ -9,7 +9,7 @@ IRIG 106 is developed and maintained by the Telemetry Group of the Range Command
 ## Prerequisites
 * Docker
 * Filebeat
-* Elasticsearch 
+* Elasticsearch
 * Kibana
 
 ## Build and run.
@@ -48,7 +48,13 @@ IRIG 106 is developed and maintained by the Telemetry Group of the Range Command
     ├── vs2010
     ├── vs2012
     └── vs2017
-
-
 ```
+5. Add your ch10 file to your ./data_sets directory. Samples can be downloaded from [here](http://www.irig106.org/wiki/sample_data_files)
 
+  ```cp ~/TC-1553_107_132248.ch10 ./data_sets/```
+
+6. Load the data into Elasticsearch:
+
+   ```./docker_build_run.sh /data_sets/TTC-1553_107_132248.ch10```
+
+7. Import dashboard in ./kibana/export.ndjson via Kibana's Management->Saved Objects->Import.
